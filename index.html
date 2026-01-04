@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Blog - Shuvranshu Sekhar Sahoo</title>
+    <meta name="title" content="Blog - Shuvranshu Sekhar Sahoo">
+    <meta name="description" content="Explore articles on web development, programming, and tech by Shuvranshu Sekhar Sahoo. Learn about modern frameworks, best practices, and developer insights.">
+    <meta name="author" content="Shuvranshu Sekhar Sahoo">
+    <meta name="keywords" content="web development, programming, blog, tech, JavaScript, Python, React, Node.js, Flask, full stack developer, Shuvranshu Sahoo">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <link rel="canonical" href="https://sahooshuvranshu.github.io/blog/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahooshuvranshu.github.io/blog/">
+    <meta property="og:title" content="Blog - Shuvranshu Sekhar Sahoo">
+    <meta property="og:description" content="Explore articles on web development, programming, and tech by Shuvranshu Sekhar Sahoo. Learn about modern frameworks, best practices, and developer insights.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/70892515?v=4">
+    <meta property="og:site_name" content="Shuvranshu Sekhar Sahoo's Blog">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sahooshuvranshu.github.io/blog/">
+    <meta property="twitter:title" content="Blog - Shuvranshu Sekhar Sahoo">
+    <meta property="twitter:description" content="Explore articles on web development, programming, and tech by Shuvranshu Sekhar Sahoo.">
+    <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/70892515?v=4">
+    <meta name="twitter:creator" content="@Its_Shuvranshu">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/70892515?v=4">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/70892515?v=4">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#5865f2">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #36393f;
+            background-image: url('https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dcddde;
+        }
+
+        /* Discord UI Container */
+        .discord-container {
+            background-color: #2f3136;
+            border-radius: 0;
+            max-width: 900px;
+            width: 90vw;
+            margin: 40px auto;
+            overflow: visible;
+            box-shadow: 6px 6px 0 #18191c;
+            border: 2px solid #40444b;
+        }
+
+        @media (max-width: 768px) {
+            .discord-container {
+                width: 95vw;
+                margin: 20px auto;
+                box-shadow: 4px 4px 0 #18191c;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .discord-container {
+                width: 98vw;
+                margin: 10px auto;
+                box-shadow: 3px 3px 0 #18191c;
+            }
+
+            body {
+                align-items: flex-start;
+            }
+        }
+
+        /* Banner */
+        .discord-banner {
+            height: 160px;
+            background-image: url('https://i.pinimg.com/originals/c1/fc/9d/c1fc9d7f6ae08d56f2b84e81799790a5.gif'), linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid #18191c;
+        }
+
+        .discord-banner::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #ffffff20 0px,
+                #ffffff20 2px,
+                transparent 2px,
+                transparent 4px
+            );
+        }
+
+        .banner-content {
+            text-align: center;
+            color: white;
+        }
+
+        .banner-icon {
+            font-size: 48px;
+            margin-bottom: 8px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .banner-title {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @media (max-width: 480px) {
+            .banner-icon {
+                font-size: 36px;
+            }
+            .banner-title {
+                font-size: 24px;
+            }
+
+            .discord-banner {
+                height: 120px;
+            }
+        }
+
+        /* Header Bar */
+        .blog-header {
+            background-color: #202225;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #18191c;
+            font-family: 'Courier New', monospace;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #00b0f4;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .back-btn {
+            background-color: #3ba55c;
+            color: white;
+            border: 2px solid #2d7d46;
+            border-radius: 0;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 2px 2px 0 #18191c;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .back-btn:hover {
+            background-color: #2d7d46;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 #18191c;
+        }
+
+        @media (max-width: 768px) {
+            .blog-header {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .header-left {
+                font-size: 11px;
+            }
+
+            .back-btn {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-header {
+                padding: 10px 12px;
+            }
+
+            .header-left span {
+                font-size: 10px;
+            }
+        }
+
+        /* Content Area */
+        .blog-content {
+            padding: 20px;
+            min-height: 400px;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background-color: #36393f;
+            border: 2px solid #40444b;
+            border-radius: 0;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 3px 3px 0 #18191c;
+        }
+
+        .welcome-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #40444b;
+        }
+
+        .welcome-icon {
+            font-size: 28px;
+        }
+
+        .welcome-title {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .welcome-text {
+            color: #dcddde;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .welcome-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .highlight-item {
+            background-color: #2f3136;
+            border: 2px solid #40444b;
+            border-radius: 0;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.15s ease;
+        }
+
+        .highlight-item:hover {
+            background-color: #40444b;
+            transform: translate(-1px, -1px);
+            box-shadow: 2px 2px 0 #18191c;
+        }
+
+        .highlight-emoji {
+            font-size: 24px;
+        }
+
+        .highlight-text {
+            color: #b9bbbe;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .welcome-section {
+                padding: 16px;
+            }
+
+            .welcome-title {
+                font-size: 18px;
+            }
+
+            .welcome-text {
+                font-size: 14px;
+            }
+
+            .welcome-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .welcome-icon {
+                font-size: 24px;
+            }
+        }
+
+        /* Blog Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .blog-content {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .posts-grid {
+                gap: 10px;
+            }
+
+            .blog-content {
+                padding: 12px;
+            }
+        }
+
+        /* Blog Post Card */
+        .post-card {
+            background-color: #36393f;
+            border: 2px solid #40444b;
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.15s ease;
+            box-shadow: 3px 3px 0 #18191c;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .post-card:hover {
+            background-color: #40444b;
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 #18191c;
+        }
+
+        /* Post Card Header */
+        .post-card-header {
+            background-color: #202225;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #18191c;
+        }
+
+        .post-date {
+            color: #8e9297;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .post-status {
+            background-color: #5865f2;
+            color: white;
+            padding: 2px 6px;
+            font-size: 9px;
+            font-weight: 700;
+            border: 1px solid #4752c4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Post Card Body */
+        .post-card-body {
+            padding: 16px;
+        }
+
+        .post-title {
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .post-description {
+            color: #b9bbbe;
+            font-size: 14px;
+            line-height: 1.6;
+            border-left: 3px solid #5865f2;
+            padding-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .post-title {
+                font-size: 16px;
+            }
+
+            .post-description {
+                font-size: 13px;
+            }
+
+            .post-card-body {
+                padding: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .post-title {
+                font-size: 15px;
+            }
+
+            .post-description {
+                font-size: 12px;
+            }
+
+            .post-date {
+                font-size: 10px;
+            }
+
+            .post-status {
+                font-size: 8px;
+                padding: 2px 5px;
+            }
+        }
+
+        /* Social Links Section */
+        .discord-social {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 8px;
+            margin-top: 24px;
+            padding: 16px 0;
+            border-top: 1px solid #40444b;
+        }
+
+        .discord-social a {
+            text-decoration: none;
+        }
+
+        .discord-social-btn {
+            background-color: #40444b;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 16px;
+            cursor: pointer;
+            color: #dcddde;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            border: 1px solid #202225;
+            width: 100%;
+        }
+
+        .discord-social-btn:hover {
+            background-color: #5865f2;
+            border-color: #5865f2;
+            transform: translateY(-2px);
+        }
+
+        .discord-social-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .emoji-icon {
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .discord-footer {
+            background-color: #202225;
+            padding: 16px;
+            border-top: 2px solid #18191c;
+            text-align: center;
+        }
+
+        .discord-footer-content {
+            color: #72767d;
+        }
+
+        .discord-footer-text {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .discord-footer-highlight {
+            color: #faa61a;
+            font-weight: 600;
+        }
+
+        .discord-footer-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .discord-footer-link {
+            color: #00b0f4;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .discord-footer-link svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+        .discord-footer-link:hover {
+            color: #5865f2;
+            text-decoration: underline;
+        }
+
+        .discord-footer-tagline {
+            color: #72767d;
+            font-size: 11px;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .discord-social {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 6px;
+                padding: 12px 0;
+            }
+
+            .discord-social-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+                gap: 6px;
+            }
+
+            .discord-social-btn svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .discord-footer {
+                padding: 14px;
+            }
+
+            .discord-footer-text {
+                font-size: 12px;
+            }
+
+            .discord-footer-link {
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .discord-social {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+                padding: 10px 0;
+            }
+
+            .discord-social-btn {
+                padding: 6px 8px;
+                font-size: 11px;
+                gap: 4px;
+            }
+
+            .discord-social-btn svg {
+                width: 12px;
+                height: 12px;
+            }
+
+            .emoji-icon {
+                font-size: 12px;
+            }
+
+            .discord-footer {
+                padding: 12px;
+            }
+
+            .discord-footer-text {
+                font-size: 11px;
+            }
+
+            .discord-footer-links {
+                gap: 12px;
+            }
+
+            .discord-footer-link {
+                font-size: 10px;
+            }
+
+            .discord-footer-tagline {
+                font-size: 10px;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8e9297;
+            font-family: 'Courier New', monospace;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #40444b;
+            border-top-color: #5865f2;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8e9297;
+        }
+
+        .empty-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .empty-text {
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="discord-container">
+        <!-- Banner -->
+        <div class="discord-banner">
+            <div class="banner-content">
+                <div class="banner-icon">📝</div>
+                <div class="banner-title">BLOG</div>
+            </div>
+        </div>
+
+        <!-- Header Bar -->
+        <div class="blog-header">
+            <div class="header-left">
+                <span>📰</span>
+                <span>LATEST POSTS</span>
+            </div>
+            <a href="https://sahooshuvranshu.github.io" class="back-btn">
+                ← BACK TO HOME
+            </a>
+        </div>
+
+        <!-- Content -->
+        <div class="blog-content">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-header">
+                    <span class="welcome-icon">👋</span>
+                    <h2 class="welcome-title">Welcome to My Blog</h2>
+                </div>
+                <p class="welcome-text">
+                    Hey there! I'm <strong>Shuvranshu Sekhar Sahoo</strong>, a passionate full-stack developer who loves building things and sharing knowledge. This blog is where I document my journey, share insights, and help fellow developers grow.
+                </p>
+                <p class="welcome-text">
+                    Here you'll find articles about web development, programming tutorials, tech insights, and lessons learned from real-world projects. Whether you're just starting out or looking to level up your skills, I hope you find something valuable here.
+                </p>
+                <div class="welcome-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">💻</span>
+                        <span class="highlight-text">Web Development Tips</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">🚀</span>
+                        <span class="highlight-text">Project Tutorials</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">📚</span>
+                        <span class="highlight-text">Best Practices</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">✨</span>
+                        <span class="highlight-text">Developer Insights</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="posts-container" class="posts-grid">
+                <!-- Loading state -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <div>Loading posts...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="discord-social">
+            <a href="https://sahooshuvranshu.me/blog" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                    </svg>
+                    Blog
+                </button>
+            </a>
+            <a href="https://linktr.ee/sahooshuvranshu" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13.736 5.853L12 4.236 10.264 5.853 7.368 8.749 8.653 10.034 12 6.687 15.347 10.034 16.632 8.749z"/>
+                        <path d="M8.653 14.329L7.368 15.614 10.264 18.51 12 20.127 13.736 18.51 16.632 15.614 15.347 14.329 12 17.676z"/>
+                        <path d="M10.75 12.889H13.25V14.111H10.75z"/>
+                    </svg>
+                    LinkHub
+                </button>
+            </a>
+            <a href="https://links.sahooshuvranshu.me" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                    </svg>
+                    LinkDL
+                </button>
+            </a>
+            <a href="https://github.com/SahooShuvranshu" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </button>
+            </a>
+            <a href="https://bsky.app/profile/sahooshuvranshu.me" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 600 530" fill="currentColor">
+                        <path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z"/>
+                    </svg>
+                    Bluesky
+                </button>
+            </a>
+            <a href="https://x.com/Its_Shuvranshu" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                    X
+                </button>
+            </a>
+            <a href="https://www.threads.net/@its_shuvranshu.alive" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 192 192" fill="currentColor">
+                        <path d="M141.537 88.988a66.667 66.667 0 0 0-2.518-1.143c-1.482-27.307-16.403-42.94-41.457-43.1h-.35c-14.986 0-27.449 6.396-35.12 18.036l13.779 9.452c5.73-8.695 14.093-10.285 21.339-10.285h.233c9.363.116 16.512 2.867 20.542 8.008 2.76 3.525 4.495 8.173 5.243 14.125-5.604-1.204-11.628-1.864-17.869-1.864-30.878 0-50.478 15.515-50.478 39.979 0 11.563 4.164 21.576 12.075 29.012 7.658 7.21 17.916 10.906 29.662 10.906 15.298 0 27.852-5.605 36.263-16.196 5.802-7.257 9.447-16.793 10.693-28.181 5.856 3.493 10.33 8.086 12.991 13.483 4.151 8.426 4.686 19.53 1.574 30.396-2.906 10.161-8.577 18.22-16.35 23.357-8.867 5.856-20.652 8.777-35.076 8.777-23.557 0-40.978-7.907-51.768-23.513-10.464-15.127-15.77-36.716-15.77-64.158 0-27.342 5.306-48.835 15.77-63.863C34.127 9.076 51.548 1.068 75.105 1.068c23.656 0 41.126 8.008 51.915 23.813 10.564 15.474 15.87 37.207 15.77 64.548v.795l15.068.097v-.894c.1-30.057-5.956-54.439-18.036-72.515C126.598 6.214 104.381-2.36 75.105-2.36c-29.175 0-51.393 8.675-66.043 25.777C-1.504 39.987-7.56 64.37-7.56 94.326c0 30.057 6.056 54.34 17.997 72.215 14.65 17.102 36.868 25.777 66.043 25.777 17.053 0 32.492-3.375 45.883-10.038 13.391-6.663 23.945-16.553 31.363-29.381 8.123-14.037 11.234-29.712 9.267-46.625-2.055-17.713-9.447-32.217-21.952-43.126z"/>
+                    </svg>
+                    Threads
+                </button>
+            </a>
+            <a href="https://discord.com/users/879695880528216075" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    Discord
+                </button>
+            </a>
+            <a href="https://www.youtube.com/@sahooshuvranshu" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                    YouTube
+                </button>
+            </a>
+            <a href="https://www.instagram.com/its_shuvranshu.alive/" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Instagram
+                </button>
+            </a>
+            <a href="https://snapchat.com/add/itscrystaldev" target="_blank" rel="noopener noreferrer">
+                <button class="discord-social-btn">
+                    <span class="emoji-icon">👻</span>
+                    Snapchat
+                </button>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="discord-footer">
+            <div class="discord-footer-content">
+                <div class="discord-footer-text">
+                    Made with 💜 and ☕ by <span class="discord-footer-highlight">Shuvranshu Sekhar Sahoo</span>
+                </div>
+                <div class="discord-footer-links">
+                    <a href="https://github.com/SahooShuvranshu/blog" target="_blank" class="discord-footer-link" title="View Source Code">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                        </svg>
+                        Source Code
+                    </a>
+                    <span style="color: #40444b;">•</span>
+                    <a href="https://github.com/SahooShuvranshu" target="_blank" class="discord-footer-link" title="GitHub Profile">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        Projects
+                    </a>
+                </div>
+                <div class="discord-footer-tagline">
+                    © 2026 All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Blog post metadata
+        const posts = [
+            {
+                title: "Welcome to My Blog",
+                date: "2026-01-04",
+                description: "The first post on my new blog. Learn about what I'll be writing about and why I started this journey.",
+                slug: "welcome-to-my-blog"
+            },
+            {
+                title: "Building Modern Web Applications",
+                date: "2026-01-03",
+                description: "Exploring the latest trends in web development, from frameworks to best practices for scalable applications.",
+                slug: "building-modern-web-applications"
+            },
+            {
+                title: "My Journey as a Developer",
+                date: "2026-01-02",
+                description: "A reflection on my path in software development, the challenges I've faced, and lessons learned along the way.",
+                slug: "my-journey-as-developer"
+            }
+        ];
+
+        // Generate JSON-LD structured data for blog
+        function generateStructuredData() {
+            const structuredData = {
+                "@context": "https://schema.org",
+                "@type": "Blog",
+                "name": "Shuvranshu Sekhar Sahoo's Blog",
+                "description": "Articles on web development, programming, and technology",
+                "url": "https://sahooshuvranshu.github.io/blog/",
+                "author": {
+                    "@type": "Person",
+                    "name": "Shuvranshu Sekhar Sahoo",
+                    "url": "https://sahooshuvranshu.github.io",
+                    "sameAs": [
+                        "https://github.com/SahooShuvranshu",
+                        "https://twitter.com/Its_Shuvranshu"
+                    ]
+                },
+                "blogPost": posts.map(post => ({
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.description,
+                    "datePublished": post.date,
+                    "author": {
+                        "@type": "Person",
+                        "name": "Shuvranshu Sekhar Sahoo"
+                    },
+                    "url": `https://sahooshuvranshu.github.io/blog/post.html?slug=${post.slug}`
+                }))
+            };
+
+            const script = document.createElement('script');
+            script.type = 'application/ld+json';
+            script.text = JSON.stringify(structuredData);
+            document.head.appendChild(script);
+        }
+
+        // Format date to readable format
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        // Load and display posts
+        function loadPosts() {
+            const container = document.getElementById('posts-container');
+            
+            // Simulate loading delay for realism
+            setTimeout(() => {
+                if (posts.length === 0) {
+                    // Show empty state
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">📭</div>
+                            <div class="empty-text">No posts yet. Check back soon!</div>
+                        </div>
+                    `;
+                } else {
+                    // Generate post cards
+                    container.innerHTML = posts.map(post => `
+                        <a href="post.html?slug=${post.slug}" class="post-card">
+                            <div class="post-card-header">
+                                <span class="post-date">${formatDate(post.date)}</span>
+                                <span class="post-status">NEW</span>
+                            </div>
+                            <div class="post-card-body">
+                                <h2 class="post-title">${post.title}</h2>
+                                <p class="post-description">${post.description}</p>
+                            </div>
+                        </a>
+                    `).join('');
+                }
+            }, 500);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPosts();
+            generateStructuredData();
+        });
+    </script>
+</body>
+</html>
