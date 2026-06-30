@@ -50,7 +50,7 @@ cd blog
 2. Push this code to the repository
 3. Go to Settings → Pages
 4. Set source to `main` branch
-5. Your blog will be live at `https://yourusername.github.io/blog/`
+5. Your blog will be live at `https://sahooshuvranshu.github.io/blog/`
 
 ### 3. Local Development
 
@@ -184,8 +184,8 @@ Update links to your portfolio and social media:
 <a href="https://sahooshuvranshu.github.io" class="back-btn">
 
 <!-- Footer links -->
-<a href="https://github.com/YourUsername" target="_blank">GitHub</a>
-<a href="https://yourwebsite.com">Portfolio</a>
+<a href="https://github.com/SahooShuvranshu" target="_blank">GitHub</a>
+<a href="https://sahooshuvranshu.github.io">Portfolio</a>
 ```
 
 ### Update Author Name
@@ -326,11 +326,11 @@ To include images in posts:
    git add .
    git commit -m "Initial blog setup"
    git branch -M main
-   git remote add origin https://github.com/YourUsername/blog.git
+   git remote add origin https://github.com/SahooShuvranshu/blog.git
    git push -u origin main
    ```
 3. Enable GitHub Pages in repository settings
-4. Your blog is live at `https://yourusername.github.io/blog/`
+4. Your blog is live at `https://sahooshuvranshu.github.io/blog/`
 
 ### Netlify
 
