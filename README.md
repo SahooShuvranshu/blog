@@ -396,8 +396,9 @@ Suggestions and improvements are welcome:
 **Shuvranshu Sekhar Sahoo**
 
 - Portfolio: [sahooshuvranshu.github.io](https://sahooshuvranshu.github.io)
-- GitHub: [@SahooShuvranshu](https://github.com/SahooShuvranshu)
 - Blog: [sahooshuvranshu.github.io/blog](https://sahooshuvranshu.github.io/blog)
+- Socials: [sahooshuvranshu.github.io/socials](https://sahooshuvranshu.github.io/socials/)
+- GitHub: [@SahooShuvranshu](https://github.com/SahooShuvranshu)
 
 ---
 
