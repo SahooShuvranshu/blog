@@ -65,12 +65,11 @@
             color: #dcddde;
         }
 
-        /* Discord UI Container */
         .discord-container {
             background-color: #2f3136;
             border-radius: 0;
-            max-width: 900px;
-            width: 90vw;
+            max-width: 600px;
+            width: 60vw;
             margin: 40px auto;
             overflow: visible;
             box-shadow: 6px 6px 0 #18191c;
@@ -288,101 +287,8 @@
 
         /* Content Area */
         .blog-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 20px;
             padding: 20px;
             min-height: 400px;
-            align-items: start;
-        }
-
-        .blog-main-col {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-width: 0;
-        }
-
-        .blog-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-width: 0;
-        }
-
-        /* Sidebar profile styling */
-        .sidebar-profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px 16px;
-        }
-
-        .sidebar-avatar-wrapper {
-            position: relative;
-            margin-bottom: 12px;
-        }
-
-        .sidebar-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid #202225;
-            display: block;
-        }
-
-        .sidebar-username {
-            color: #ffffff;
-            font-size: 15px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-        }
-
-        .sidebar-discriminator {
-            color: #b9bbbe;
-            font-weight: 400;
-        }
-
-        /* Tooltip styling for badges in sidebar */
-        .discord-badge {
-            position: relative;
-            cursor: pointer;
-        }
-        .discord-badge::before {
-            content: attr(title);
-            position: absolute;
-            bottom: calc(100% + 6px);
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #18181c;
-            color: #ffffff;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 10px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity 0.15s ease, visibility 0.15s ease;
-            z-index: 999;
-        }
-        .discord-badge:hover::before {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        @media (max-width: 900px) {
-            .blog-content {
-                grid-template-columns: 1fr;
-            }
-
-            .blog-sidebar {
-                display: none;
-            }
         }
 
         /* Welcome Section */
@@ -969,91 +875,43 @@
 
         <!-- Content -->
         <div class="blog-content">
-            <div class="blog-main-col">
-                <!-- Welcome Section -->
-                <div class="welcome-section">
-                    <div class="welcome-header">
-                        <span class="welcome-icon">👋</span>
-                        <h2 class="welcome-title">Welcome to My Blog!</h2>
-                    </div>
-                    <p class="welcome-text">
-                        Hey there! I'm <strong>Shuvranshu Sekhar Sahoo</strong>, a full-stack developer sharing my journey through code, tech insights, and real-world experiences.
-                    </p>
-                    <p class="welcome-text">
-                        Whether you're just starting out or looking to level up your skills, you'll find tutorials, tips, and guides to help you on your developer journey.
-                    </p>
-                    <div class="welcome-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-emoji">💻</span>
-                            <span class="highlight-text">Web Development Tips</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-emoji">🚀</span>
-                            <span class="highlight-text">Project Tutorials</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-emoji">📚</span>
-                            <span class="highlight-text">Best Practices</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-emoji">✨</span>
-                            <span class="highlight-text">Developer Insights</span>
-                        </div>
-                    </div>
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-header">
+                    <span class="welcome-icon">👋</span>
+                    <h2 class="welcome-title">Welcome to My Blog!</h2>
                 </div>
-
-                <div id="posts-container" class="posts-grid">
-                    <!-- Loading state -->
-                    <div class="loading">
-                        <div class="loading-spinner"></div>
-                        <div>Loading posts...</div>
+                <p class="welcome-text">
+                    Hey there! I'm <strong>Shuvranshu Sekhar Sahoo</strong>, a full-stack developer sharing my journey through code, tech insights, and real-world experiences.
+                </p>
+                <p class="welcome-text">
+                    Whether you're just starting out or looking to level up your skills, you'll find tutorials, tips, and guides to help you on your developer journey.
+                </p>
+                <div class="welcome-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">💻</span>
+                        <span class="highlight-text">Web Development Tips</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">🚀</span>
+                        <span class="highlight-text">Project Tutorials</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">📚</span>
+                        <span class="highlight-text">Best Practices</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-emoji">✨</span>
+                        <span class="highlight-text">Developer Insights</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <div class="blog-sidebar">
-                <!-- Developer Profile Card -->
-                <div class="discord-about-card">
-                    <div class="card-header">
-                        <span class="header-icon">👤</span>
-                        <span class="header-title">DEVELOPER PROFILE</span>
-                    </div>
-                    <div class="card-content sidebar-profile">
-                        <div class="sidebar-avatar-wrapper">
-                            <img src="https://avatars.githubusercontent.com/u/70892515?v=4" alt="Profile Avatar" class="sidebar-avatar">
-                        </div>
-                        <div class="sidebar-username">
-                            Shuvranshu Sekhar Sahoo<span class="sidebar-discriminator">#2801</span>
-                            <div class="discord-verified-badge-animated" title="Verified Account" style="width: 16px; height: 16px; display: inline-block; vertical-align: middle; margin-left: 4px;">
-                                <img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/server/Verified.svg"
-                                    alt="Verified" style="width: 100%; height: 100%; display: block;">
-                            </div>
-                        </div>
-                        <!-- Badges -->
-                        <div class="discord-badges" style="margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;">
-                            <div class="discord-badge" title="Discord Nitro" style="width: 20px; height: 20px;"><img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/discordnitro.svg" alt="Nitro" style="width: 100%; height: 100%;"></div>
-                            <div class="discord-badge" title="HypeSquad Balance" style="width: 20px; height: 20px;"><img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/hypesquadbalance.svg" alt="HypeSquad" style="width: 100%; height: 100%;"></div>
-                            <div class="discord-badge" title="Active Developer" style="width: 20px; height: 20px;"><img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/activedeveloper.svg" alt="Active Dev" style="width: 100%; height: 100%;"></div>
-                            <div class="discord-badge" title="Early Supporter" style="width: 20px; height: 20px;"><img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/discordearlysupporter.svg" alt="Early Supporter" style="width: 100%; height: 100%;"></div>
-                            <div class="discord-badge" title="Discord Bug Hunter (Tier 1)" style="width: 20px; height: 20px;"><img src="https://raw.githubusercontent.com/PandaDevOfficial/badges-discord/main/assets/discordbughunter1.svg" alt="Bug Hunter" style="width: 100%; height: 100%;"></div>
-                        </div>
-                        <!-- Custom Status -->
-                        <div class="sidebar-status" style="margin-top: 14px; background-color: #202225; padding: 10px; border: 1px solid #40444b; font-size: 12px; text-align: center; color: #b9bbbe; width: 100%; border-radius: 4px; font-family: 'Courier New', Courier, monospace;">
-                            💻 Building digital solutions
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Live Presence Card -->
-                <div class="discord-about-card">
-                    <div class="card-header">
-                        <span class="header-icon">💻</span>
-                        <span class="header-title">LIVE ACTIVITY</span>
-                    </div>
-                    <div class="card-content" style="padding: 12px; display: flex; justify-content: center; background-color: #202225;">
-                        <img src="https://lanyard.cnrad.dev/api/879695880528216075?showDisplayName=true&hideSpotify=true&hideDiscrim=true&hideStatus=true&hideTag=true&hideTimestamp=true" alt="Discord Rich Presence" style="width: 100%; border-radius: 4px; display: block;" />
-                    </div>
+            <div id="posts-container" class="posts-grid">
+                <!-- Loading state -->
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <div>Loading posts...</div>
                 </div>
             </div>
         </div>
